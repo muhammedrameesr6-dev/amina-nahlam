@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Engagement Ceremony | Amina Azzah & Nahal Rasheed</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Music Audio -->
+  <audio id="bg-music" src="assets/audio/music.m4a" preload="auto" loop></audio>
+
+  <!-- Ambient Floating Flower Petals / Sparkles Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- ==================== COVER / OPENING MODAL ==================== -->
+  <div id="cover-overlay" class="cover-overlay">
+    <!-- Star Flower / Particle Background -->
+    <div class="cover-particles" id="cover-particles"></div>
+    
+    <div class="cover-card" id="cover-card">
+      <!-- Floral Corners -->
+      <img src="assets/images/card_flower.png" alt="Floral decor" class="cover-floral-tl">
+      <img src="assets/images/card_flower.png" alt="Floral decor" class="cover-floral-br">
+      
+      <!-- Purple Heart Badge -->
+      <div class="cover-heart-badge">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#FFFFFF">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+
+      <h1 class="cover-names">
+        <span class="cover-bride">Amina Azzah</span>
+        <span class="cover-amp">&amp;</span>
+        <span class="cover-groom">Nahal Rasheed</span>
+      </h1>
+
+      <div class="cover-divider">
+        <span class="line"></span>
+        <span class="flower-icon">❦</span>
+        <span class="line"></span>
+      </div>
+
+      <p class="cover-date">November 21, 2026</p>
+      <p class="cover-invite-text">Cordially Invites</p>
+
+      <button id="open-btn" class="open-button" aria-label="Open Invitation">
+        <span>Open</span>
+        <div class="blossom-effect" id="blossom-effect"></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== FLOATING MUSIC TOGGLE BUTTON ==================== -->
+  <button id="music-toggle" class="floating-music-btn paused" aria-label="Toggle Music" title="Play/Pause Music">
+    <div class="equalizer-bars">
+      <span class="bar bar-1"></span>
+      <span class="bar bar-2"></span>
+      <span class="bar bar-3"></span>
+    </div>
+  </button>
+
+  <!-- ==================== MAIN INVITATION CONTAINER ==================== -->
+  <main class="page-container">
+    
+    <!-- Top & Side Floral Watercolors -->
+    <div class="floral-decorations" aria-hidden="true">
+      <img src="assets/images/floral_top_left.png" alt="" class="floral-top-left">
+      <img src="assets/images/floral_top_right.png" alt="" class="floral-top-right">
+      <img src="assets/images/floral_bottom_left.png" alt="" class="floral-bottom-left">
+      <img src="assets/images/floral_bottom_right.png" alt="" class="floral-bottom-right">
+    </div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section">
+      <div class="hero-header-tag">ENGAGEMENT CEREMONY</div>
+      
+      <!-- Interactive Envelope with Arch Polaroid Photo -->
+      <div class="envelope-wrapper" id="envelope-wrapper">
+        <img src="assets/images/envelope_hero.png" alt="Amina & Nahal Engagement Arch and Envelope" class="envelope-hero-img">
+      </div>
+
+      <!-- Names & Palace Watermark Section -->
+      <div class="hero-names-wrapper">
+        <!-- Faint Palace Building Illustration -->
+        <div class="palace-watermark" aria-hidden="true"></div>
+        <div class="monogram-watermark" aria-hidden="true">&amp;</div>
+        
+        <h2 class="hero-title-name">AMINA AZZAH</h2>
+        <h2 class="hero-title-name">NAHAL RASHEED</h2>
+      </div>
+    </section>
+
+    <!-- ==================== COUPLE & CEREMONY CARD ==================== -->
+    <section class="invitation-ticket-section">
+      <!-- Top Card: The Engagement Announcement -->
+      <div class="purple-card announcement-card">
+        <h3 class="card-main-title">ENGAGEMENT</h3>
+        <p class="card-lead-text">With great joy, we cordially invite you to the engagement ceremony</p>
+
+        <div class="couple-profile bride-profile">
+          <h4 class="person-name">Dr. Amina Azzah</h4>
+          <span class="person-role">BRIDE</span>
+        </div>
+
+        <div class="couple-ampersand">&amp;</div>
+
+        <div class="couple-profile groom-profile">
+          <h4 class="person-name">Nahal Rasheed</h4>
+          <span class="person-role">GROOM</span>
+        </div>
+      </div>
+
+      <!-- Ticket Perforation / Scallop Notches -->
+      <div class="ticket-perforation">
+        <div class="notch notch-left"></div>
+        <div class="perforation-line"></div>
+        <div class="notch notch-right"></div>
+      </div>
+
+      <!-- Bottom Card: Event Details, Date, Countdown & Calendar -->
+      <div class="purple-card event-details-card">
+        <h3 class="card-main-title">ENGAGEMENT PARTY</h3>
+        <p class="card-sub-title">THE ENGAGEMENT PARTY WILL TAKE PLACE AT:</p>
+
+        <!-- Time and Date Grid -->
+        <div class="time-date-grid">
+          <div class="time-box">
+            <span class="time-hour">16:00</span>
+            <span class="time-day">SATURDAY</span>
+          </div>
+          <div class="time-date-divider"></div>
+          <div class="date-box">
+            <span class="date-number">21</span>
+            <div class="date-month-year">
+              <span class="date-month">NOVEMBER</span>
+              <span class="date-year">2026</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Countdown Timer -->
+        <div class="countdown-section">
+          <span class="countdown-label">COUNTDOWN</span>
+          <div class="countdown-display" id="countdown-display">
+            <span id="countdown-text">Calculating countdown...</span>
+          </div>
+        </div>
+
+        <!-- Embedded Interactive Calendar Widget -->
+        <div class="calendar-card">
+          <div class="calendar-header">
+            <span class="calendar-month-name">November 2026</span>
+          </div>
+
+          <div class="calendar-grid">
+            <div class="cal-day-header">Mo</div>
+            <div class="cal-day-header">Tu</div>
+            <div class="cal-day-header">We</div>
+            <div class="cal-day-header">Th</div>
+            <div class="cal-day-header">Fr</div>
+            <div class="cal-day-header">Sa</div>
+            <div class="cal-day-header">Su</div>
+
+            <!-- Week 1 (Nov 1 is Sunday) -->
+            <div class="cal-empty"></div>
+            <div class="cal-empty"></div>
+            <div class="cal-empty"></div>
+            <div class="cal-empty"></div>
+            <div class="cal-empty"></div>
+            <div class="cal-empty"></div>
+            <div class="cal-day">1</div>
+
+            <!-- Week 2 -->
+            <div class="cal-day">2</div>
+            <div class="cal-day">3</div>
+            <div class="cal-day">4</div>
+            <div class="cal-day">5</div>
+            <div class="cal-day">6</div>
+            <div class="cal-day">7</div>
+            <div class="cal-day">8</div>
+
+            <!-- Week 3 -->
+            <div class="cal-day">9</div>
+            <div class="cal-day">10</div>
+            <div class="cal-day">11</div>
+            <div class="cal-day">12</div>
+            <div class="cal-day">13</div>
+            <div class="cal-day">14</div>
+            <div class="cal-day">15</div>
+
+            <!-- Week 4 -->
+            <div class="cal-day">16</div>
+            <div class="cal-day">17</div>
+            <div class="cal-day">18</div>
+            <div class="cal-day">19</div>
+            <div class="cal-day">20</div>
+            <!-- Event Highlight Day 21 with Heart Badge -->
+            <div class="cal-day cal-event-day" title="Engagement Day!">
+              <div class="event-heart">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#583f6f">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span class="heart-day-number">21</span>
+              </div>
+            </div>
+            <div class="cal-day">22</div>
+
+            <!-- Week 5 -->
+            <div class="cal-day">23</div>
+            <div class="cal-day">24</div>
+            <div class="cal-day">25</div>
+            <div class="cal-day">26</div>
+            <div class="cal-day">27</div>
+            <div class="cal-day">28</div>
+            <div class="cal-day">29</div>
+
+            <!-- Week 6 -->
+            <div class="cal-day">30</div>
+            <div class="cal-empty"></div>
+            <div class="cal-empty"></div>
+            <div class="cal-empty"></div>
+            <div class="cal-empty"></div>
+            <div class="cal-empty"></div>
+            <div class="cal-empty"></div>
+          </div>
+        </div>
+
+        <!-- Add to Calendar Link Button -->
+        <div class="add-calendar-wrapper">
+          <button id="add-to-calendar-btn" class="add-calendar-link">Add to Calendar</button>
+        </div>
+      </div>
+
+      <!-- CONFIRM ATTENDANCE CTA Button -->
+      <div class="cta-button-container">
+        <button id="rsvp-trigger-btn" class="confirm-attendance-btn">
+          CONFIRM ATTENDANCE
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== VENUE & MAP SECTION ==================== -->
+    <section class="venue-section">
+      <h3 class="venue-main-title">SHARQ VILLAGE &amp; SPA, A RITZ-CARLTON HOTEL</h3>
+      <p class="venue-subtitle">Sharq Village &amp; Spa, a Ritz-Carlton Hotel</p>
+
+      <!-- Google Map Container -->
+      <div class="map-card-container">
+        <!-- Floating "Open in Maps" pill -->
+        <a href="https://maps.google.com/?q=Sharq+Village+%26+Spa,+a+Ritz-Carlton+Hotel,+Doha,+Qatar" target="_blank" rel="noopener noreferrer" class="open-in-maps-pill">
+          <span>Open in Maps</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+          </svg>
+        </a>
+
+        <!-- Interactive Google Maps Iframe -->
+        <iframe 
+          title="Sharq Village & Spa Map"
+          class="google-map-iframe"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.729707172421!2d51.54925467615967!3d25.28809982834371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c54530bb66db%3A0xb35a51965bb7ee64!2sSharq%20Village%20%26%20Spa%2C%20a%20Ritz-Carlton%20Hotel!5e0!3m2!1sen!2sqa!4v1700000000000!5m2!1sen!2sqa"
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- Get Directions Link -->
+      <div class="get-directions-wrapper">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Sharq+Village+%26+Spa,+a+Ritz-Carlton+Hotel,+Ras+Abu+Abboud+Street,+Doha,+Qatar" target="_blank" rel="noopener noreferrer" class="get-directions-link">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M21 3L3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z"/>
+          </svg>
+          <span>Get directions</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== DRESS CODE SECTION ==================== -->
+    <section class="dress-code-section">
+      <h3 class="dress-code-title">DRESS CODE</h3>
+
+      <!-- 3 Color Swatches -->
+      <div class="swatches-container">
+        <div class="swatch-item">
+          <div class="color-circle swatch-lavender" title="Soft Lavender"></div>
+        </div>
+        <div class="swatch-item">
+          <div class="color-circle swatch-white" title="Crisp White"></div>
+        </div>
+        <div class="swatch-item">
+          <div class="color-circle swatch-gray" title="Neutral Heather Gray"></div>
+        </div>
+      </div>
+
+      <h4 class="dress-code-subtitle">Dress Code Attire</h4>
+
+      <p class="dress-code-intro">We kindly ask our guests to join us in our formal color palette:</p>
+
+      <div class="attire-guidelines">
+        <p class="attire-item">
+          <strong>Ladies:</strong> Soft Lavender (Gown or Dress) with Medium Lavender (Shawl or Hijab) and Silver Jewelry
+        </p>
+        <p class="attire-item">
+          <strong>Gentlemen:</strong> Neutral Heather Gray Shirts with Crisp White Trousers
+        </p>
+        <p class="attire-item">
+          <strong>Boys:</strong> Crisp White Shirt paired with a Neutral Heather Gray Waistcoat and Trousers
+        </p>
+      </div>
+
+      <p class="dress-code-blessing">Your presence would be the greatest gift we could receive!</p>
+    </section>
+
+    <!-- ==================== GUEST WISHES / RSVP GUESTBOOK ==================== -->
+    <section class="guestbook-section" id="guestbook-section">
+      <h3 class="guestbook-title">WISHES &amp; BLESSINGS</h3>
+      <p class="guestbook-subtitle">Leave your heartfelt congratulations for the happy couple</p>
+
+      <div class="wishes-list" id="wishes-list">
+        <!-- Default wishes loaded from JS -->
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="page-footer">
+      <div class="footer-heart-symbol">♡</div>
+      <p class="footer-credit">Amina &amp; Nahal • November 21, 2026</p>
+    </footer>
+
+  </main>
+
+  <!-- ==================== RSVP MODAL ==================== -->
+  <div id="rsvp-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-header">
+        <span class="modal-tag">RSVP</span>
+        <h3 class="modal-title">Confirm Attendance</h3>
+        <p class="modal-subtitle">Engagement Ceremony of Dr. Amina &amp; Nahal</p>
+      </div>
+
+      <form id="rsvp-form" class="rsvp-form">
+        <div class="form-group">
+          <label for="guest-name">Your Full Name <span class="required">*</span></label>
+          <input type="text" id="guest-name" required placeholder="e.g. Fathima &amp; Family">
+        </div>
+
+        <div class="form-group">
+          <label>Will you be attending? <span class="required">*</span></label>
+          <div class="attendance-options">
+            <label class="radio-card">
+              <input type="radio" name="attendance" value="yes" checked>
+              <span class="radio-label">
+                <span class="radio-icon">💜</span>
+                <span>Joyfully Accept</span>
+              </span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="attendance" value="no">
+              <span class="radio-label">
+                <span class="radio-icon">🤍</span>
+                <span>Regretfully Decline</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group" id="guest-count-group">
+          <label for="guest-count">Number of Guests</label>
+          <select id="guest-count">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5+">5+ Guests</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="guest-message">Wishes for the Couple</label>
+          <textarea id="guest-message" rows="3" placeholder="Write your heartfelt prayers and wishes..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-rsvp-btn">
+          <span>Submit RSVP</span>
+        </button>
+      </form>
+
+      <!-- Confirmation Screen -->
+      <div id="rsvp-success-view" class="rsvp-success-view hidden">
+        <div class="success-icon">💐</div>
+        <h4 class="success-title">Thank You!</h4>
+        <p class="success-message" id="success-message">Your attendance has been confirmed. We can't wait to celebrate with you!</p>
+        <button id="success-done-btn" class="success-done-btn">Back to Invitation</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== CALENDAR MODAL / OPTIONS ==================== -->
+  <div id="calendar-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card calendar-options-card">
+      <button id="cal-modal-close-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <span class="modal-tag">SAVE THE DATE</span>
+        <h3 class="modal-title">Add to Your Calendar</h3>
+        <p class="modal-subtitle">Saturday, November 21, 2026 at 16:00 (4:00 PM)</p>
+      </div>
+
+      <div class="calendar-buttons-list">
+        <a id="btn-google-cal" href="#" target="_blank" rel="noopener noreferrer" class="calendar-btn google-cal-btn">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
+          </svg>
+          <span>Google Calendar</span>
+        </a>
+
+        <button id="btn-ics-download" class="calendar-btn ics-btn">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+          </svg>
+          <span>Apple / Outlook Calendar (.ics)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
